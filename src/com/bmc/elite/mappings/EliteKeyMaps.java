@@ -166,7 +166,7 @@ public class EliteKeyMaps {
             put("Key_P", KeyHIDCodes.KEY_P);
             put("Key_LeftBracket", KeyHIDCodes.KEY_LEFTBRACE);
             put("Key_RightBracket", KeyHIDCodes.KEY_RIGHTBRACE);
-            put("Key_BackSlash", KeyHIDCodes.KEY_HASHTILDE);
+            put("Key_BackSlash", KeyHIDCodes.KEY_BACKSLASH);
             put("Key_Delete", KeyHIDCodes.KEY_DELETE);
             put("Key_End", KeyHIDCodes.KEY_END);
             put("Key_PageDown", KeyHIDCodes.KEY_PAGEDOWN);
