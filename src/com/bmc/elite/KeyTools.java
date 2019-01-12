@@ -5,6 +5,7 @@ import com.bmc.elite.mappings.EliteKeyMaps;
 import com.logitech.gaming.LogiLED;
 import com.sun.istack.internal.Nullable;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -156,5 +157,12 @@ public class KeyTools {
                 stopEliteKeyEffect(key);
             }
         }
+    }
+    public static Integer dimEliteKeyFromColorArray(String eliteKeyName, Integer[] colorArray, double percent) {
+        Integer[] newColor = {(int)(colorArray[0]*percent), (int)(colorArray[1]*percent), (int)(colorArray[2]*percent)};
+        /*colorArray[0] = colorArray[0]*(percent/100);
+        colorArray[1] = colorArray[1]*(percent/100);
+        colorArray[2] = colorArray[2]*(percent/100);*/
+        return setEliteKeyFromColorArray(eliteKeyName, newColor);
     }
 }

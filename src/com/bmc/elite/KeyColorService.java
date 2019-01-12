@@ -20,6 +20,8 @@ import com.google.gson.stream.JsonReader;
 
 import java.util.*;
 
+import static com.bmc.elite.KeyTools.dimEliteKeyFromColorArray;
+
 public class KeyColorService {
 
     Gson gson;
@@ -207,6 +209,13 @@ public class KeyColorService {
                 );
             }
         }
+
+        double m = 0.075;
+        double c = 0.4;
+
+        dimEliteKeyFromColorArray(eliteBindings.get(Controls.IncreaseSystemsPower).get(0), MAIN_CONTROLS.get(Controls.IncreaseSystemsPower), m*newStatus.Pips[0]+c);
+        dimEliteKeyFromColorArray(eliteBindings.get(Controls.IncreaseEnginesPower).get(0), MAIN_CONTROLS.get(Controls.IncreaseEnginesPower), m*newStatus.Pips[1]+c);
+        dimEliteKeyFromColorArray(eliteBindings.get(Controls.IncreaseWeaponsPower).get(0), MAIN_CONTROLS.get(Controls.IncreaseWeaponsPower), m*newStatus.Pips[2]+c);
 
         // Change HUD Mode key color based on current HUD mode (Discovery/Combat)
         if(currentControlGroups.allControls.contains(Controls.PlayerHUDModeToggle)) {

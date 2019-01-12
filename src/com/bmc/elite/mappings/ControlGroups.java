@@ -16,13 +16,19 @@ public class ControlGroups {
     static JournalStatus journalStatus = JournalStatus.getInstance();
 
     public static ControlGroupList MAIN_CONTROLS = new ControlGroupList(Arrays.asList(
-        /*new ControlGroup(Colors.CAMERA, new ArrayList<>(Arrays.asList(
+		/*---------------CAMERA---------------*/
+		/*new ControlGroup(Colors.CAMERA, new ArrayList<>(Arrays.asList(
             Controls.PhotoCameraToggle, Controls.PhotoCameraToggle_Buggy, Controls.VanityCameraScrollLeft,
             Controls.VanityCameraScrollRight, Controls.ToggleFreeCam, Controls.FreeCamToggleHUD,
             Controls.FixCameraRelativeToggle, Controls.FixCameraWorldToggle
         ))),*/
-        new ControlGroup(Colors.MOVEMENT_SPEED, new ArrayList<>(Arrays.asList(
-            Controls.ForwardKey, Controls.BackwardKey, Controls.IncreaseEnginesPower, Controls.SetSpeedZero,
+
+		/*---------------MOVEMENT_SPEED---------------*/
+		new ControlGroup(Colors.MOVEMENT_SPEED, new ArrayList<>(Arrays.asList(
+			Controls.IncreaseEnginesPower
+		))),
+		new ControlGroup(Colors.MOVEMENT_SPEED, new ArrayList<>(Arrays.asList(
+            Controls.ForwardKey, Controls.BackwardKey, Controls.SetSpeedZero,
             Controls.SetSpeed25, Controls.SetSpeed50, Controls.SetSpeed75, Controls.SetSpeed100
         )), new StatusState(null, new int[] {
             Flags.DOCKED, Flags.LANDED_PLANET
@@ -36,13 +42,14 @@ public class ControlGroups {
         new ControlGroup(Colors.MOVEMENT_SPEED, new ArrayList<>(Arrays.asList(
             Controls.OrderHoldPosition
         )), new StatusState(() -> journalStatus.getFighterStatus() != FighterStatus.None)),
-
         new ControlGroup(Colors.MOVEMENT_SPEED, new ArrayList<>(Arrays.asList(
             Controls.UseBoostJuice
         )), new StatusState(null, new int[] {
             Flags.DOCKED, Flags.LANDED_PLANET, Flags.SUPERCRUISE, Flags.LANDING_GEAR, Flags.CARGO_SCOOP
         })),
-        new ControlGroup(Colors.MOVEMENT_SECONDARY, new ArrayList<>(Arrays.asList(
+
+		/*---------------MOVEMENT_SECONDARY---------------*/
+		new ControlGroup(Colors.MOVEMENT_SECONDARY, new ArrayList<>(Arrays.asList(
             Controls.RollLeftButton, Controls.RollRightButton, Controls.PitchUpButton, Controls.PitchDownButton
         )), new StatusState(null, new int[] {
             Flags.DOCKED, Flags.LANDED_PLANET
@@ -56,7 +63,9 @@ public class ControlGroups {
         new ControlGroup(Colors.MOVEMENT_SECONDARY, new ArrayList<>(Arrays.asList(
             Controls.OrderFollow
         )), new StatusState(() -> journalStatus.getFighterStatus() != FighterStatus.None)),
-        new ControlGroup(Colors.UI, new ArrayList<>(Arrays.asList(
+
+		/*---------------UI---------------*/
+		new ControlGroup(Colors.UI, new ArrayList<>(Arrays.asList(
             Controls.FocusLeftPanel, Controls.FocusCommsPanel, Controls.QuickCommsPanel,
             Controls.FocusRadarPanel, Controls.FocusRightPanel, /*Controls.UI_Select,*/ Controls.PlayerHUDModeToggle
         ))),
@@ -74,7 +83,8 @@ public class ControlGroups {
             Controls.OrderAggressiveBehaviour
         )), new StatusState(() -> journalStatus.getFighterStatus() != FighterStatus.None)),
 
-        new ControlGroup(Colors.NAVIGATION, new ArrayList<>(Arrays.asList(
+		/*---------------NAVIGATION---------------*/
+		new ControlGroup(Colors.NAVIGATION, new ArrayList<>(Arrays.asList(
             Controls.GalaxyMapOpen, Controls.SystemMapOpen, Controls.TargetNextRouteSystem
         ))),
         new ControlGroup(Colors.NAVIGATION, new ArrayList<>(Arrays.asList(
@@ -85,6 +95,11 @@ public class ControlGroups {
         new ControlGroup(Colors.NAVIGATION, new ArrayList<>(Arrays.asList(
             Controls.OrderRequestDock
         )), new StatusState(() -> journalStatus.getFighterStatus() != FighterStatus.None)),
+
+		/*---------------SHIP_STUFF---------------*/
+		new ControlGroup(Colors.SHIP_STUFF, new ArrayList<>(Arrays.asList(
+			Controls.ResetPowerDistribution
+		))),
         new ControlGroup(Colors.SHIP_STUFF, new ArrayList<>(Arrays.asList(
             Controls.ShipSpotLightToggle, Controls.HeadlightsBuggyButton, Controls.NightVisionToggle
         ))),
@@ -103,8 +118,13 @@ public class ControlGroups {
         )), new StatusState(null, new int[] {
             Flags.IN_SRV
         })),
+
+		/*---------------DEFENCE---------------*/
+		new ControlGroup(Colors.DEFENCE, new ArrayList<>(Arrays.asList(
+			Controls.IncreaseSystemsPower
+		))),
         new ControlGroup(Colors.DEFENCE, new ArrayList<>(Arrays.asList(
-            Controls.IncreaseSystemsPower, Controls.ChargeECM
+            Controls.ChargeECM
         )), new StatusState(null, new int[] {
             Flags.DOCKED, Flags.LANDED_PLANET
         })),
@@ -127,11 +147,12 @@ public class ControlGroups {
             Controls.OrderDefensiveBehaviour
         )), new StatusState(() -> journalStatus.getFighterStatus() != FighterStatus.None)),
 
-        /*new ControlGroup(Colors.OFFENCE, new ArrayList<>(Arrays.asList(
+		/*---------------OFFENCE---------------*/
+		new ControlGroup(Colors.OFFENCE, new ArrayList<>(Arrays.asList(
             Controls.IncreaseWeaponsPower
-        ))),*/
+        ))),
         new ControlGroup(Colors.OFFENCE, new ArrayList<>(Arrays.asList(
-            Controls.IncreaseWeaponsPower, Controls.CycleFireGroupPrevious, Controls.CycleFireGroupNext,
+            Controls.CycleFireGroupPrevious, Controls.CycleFireGroupNext,
             Controls.SelectHighestThreat, Controls.CycleNextSubsystem, Controls.CyclePreviousSubsystem,
             Controls.CycleNextHostileTarget, Controls.CyclePreviousHostileTarget
         )), new StatusState(null, new int[] {
@@ -146,7 +167,8 @@ public class ControlGroups {
             Controls.OrderFocusTarget
         )), new StatusState(() -> journalStatus.getFighterStatus() != FighterStatus.None)),
 
-        new ControlGroup(Colors.WING, new ArrayList<>(Arrays.asList(
+		/*---------------WING---------------*/
+		new ControlGroup(Colors.WING, new ArrayList<>(Arrays.asList(
             Controls.TargetWingman0, Controls.TargetWingman1,
             Controls.TargetWingman2, Controls.SelectTargetsTarget, Controls.WingNavLock
         )), new StatusState(new int[] {
@@ -156,7 +178,8 @@ public class ControlGroups {
             Controls.OrderHoldFire
         )), new StatusState(() -> journalStatus.getFighterStatus() != FighterStatus.None)),
 
-        new ControlGroup(Colors.MODE_ENABLE, new ArrayList<>(Arrays.asList(
+		/*---------------MODE_ENABLE---------------*/
+		new ControlGroup(Colors.MODE_ENABLE, new ArrayList<>(Arrays.asList(
             Controls.ExplorationFSSEnter
         )), new StatusState(
             new int[] {
